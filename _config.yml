@@ -342,4 +342,4 @@ compress_html:
 sass:
   style:               compressed
 
-theme: jekyll-theme-cayman
+remote_theme: IrisDroidology/hydejack
