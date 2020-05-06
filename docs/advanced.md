@@ -1,10 +1,11 @@
 ---
+layout: page
+title: Advanced
 description: >
   This chapter covers advanced topics, such as offline support and custom JS builds. Codings skills are recommended.
 hide_description: true
 ---
 
-# Advanced
 This chapter covers advanced topics, such as offline support and custom JS builds. Codings skills are recommended.
 
 ## Table of Contents
@@ -33,7 +34,7 @@ importScripts("{\{ '/assets/js/sw.js' | relative_url }\}?t={\{ site.time | date_
 **NOTE**: You have to remove the `\` after each `{` and before each `}`! Alternatively, you can just copy the file from [here][sw].
 {:.message}
 
-[sw]: https://github.com/qwtel/hydejack/blob/v8/sw.js
+[sw]: https://github.com/hydecorp/hydejack/blob/v8/sw.js
 
 This will load the main service worker script from Hydejack's assets. The `site.time` part is necessary to make the service worker "byte different" every time you create a new build of your site, which triggers an update.
 
@@ -49,13 +50,15 @@ The current implementation does not cache resources from external domains. There
 
 For example, Google Analytics uses GET requests to send page views, each of which would be cached by the service worker without this policy. Frequently updating images, such as badges would never change.
 
-![Gem Version][gemv]
+![Gem Version][gemv]{:data-ignore=""}
 
 However, if you include resources that are hosted on another domain and don't change, you can add the `sw-cache` query parameter to the URL, e.g.
 
     https://upload.wikimedia.org/wikipedia/commons/b/b1/57_Chevy_210.jpg?sw-cache
 
 This will cause them to be cached like resources from the assets folder.
+
+![57 Chevy](https://upload.wikimedia.org/wikipedia/commons/b/b1/57_Chevy_210.jpg?sw-cache)
 
 [gemv]: https://badge.fury.io/rb/jekyll-theme-hydejack.svg
 
@@ -84,7 +87,7 @@ Hydejack includes a number of social media icons by default (in fact, everything
 {:.message}
 
 ### Creating the icon font
-In order to add a custom social media icon you have to use the [IcoMoon App](https://icomoon.io/app/) (free) to create a custom icon webfont. However, it is important that the generated font include all icons already in use by Hydejack. For this purpose, find the `selection.json` in [`assets/icomoon/selection.json`](https://github.com/qwtel/hydejack/blob/v6/assets/icomoon/selection.json) and upload it to the app via "Import Icons".
+In order to add a custom social media icon you have to use the [IcoMoon App](https://icomoon.io/app/) (free) to create a custom icon webfont. However, it is important that the generated font include all icons already in use by Hydejack. For this purpose, find the `selection.json` in [`assets/icomoon/selection.json`](https://github.com/hydecorp/hydejack/blob/v6/assets/icomoon/selection.json) and upload it to the app via "Import Icons".
 Then, use the app to add your icon(s).
 Consult the [IcoMoon docs](https://icomoon.io/#docs) for additional help.
 
